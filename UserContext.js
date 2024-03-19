@@ -1,0 +1,15 @@
+import { createContext, useState } from "react";
+
+const UserType=createContext(
+    // {userId:null,
+    // serUserId:()=>{}}
+);
+const UserContext=({children})=>{
+    const [userId,setUserId]=useState(null);
+    return(
+        <UserType.Provider value={{userId,setUserId}}>
+            {children}
+        </UserType.Provider>
+    )
+}
+export {UserContext,UserType}
